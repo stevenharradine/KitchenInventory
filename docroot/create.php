@@ -58,7 +58,7 @@ function get_headers_from_curl_response($response)
         <tbody>
           <tr>
             <th>Name</th>
-            <td><input type="text" name="name" value="<?php echo $name ?>" /></td>
+            <td><input id="name" type="text" name="name" value="<?php echo $name ?>" /></td>
           </tr>
           <tr>
             <th>Size</th>
@@ -81,7 +81,7 @@ function get_headers_from_curl_response($response)
     </form>
     <script>
 window.onload = function () {
-  var input = document.getElementById('submit');
+  var input = document.getElementById('name');
   input.focus();
   input.select();
 }
