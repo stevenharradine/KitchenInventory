@@ -40,9 +40,31 @@
 }
 </style>
     <ul class="menu">
-      <li><a href="add.php">Add</a></li>
-      <li><a href="remove.php">Remove</a></li>
-      <li><a href="search.php">Search</a></li>
-      <li><a href="inventory.php">Inventory</a></li>
-      <li><a href="admin/list-all-products.php">Admin Panel</a></li>
+      <li><a id="add" href="add.php">F1 - Add</a></li>
+      <li><a id="remove" href="remove.php">F2 - Remove</a></li>
+      <li><a id="search" href="search.php">F3 - Search</a></li>
+      <li><a id="inventory" href="inventory.php">F4 - Inventory</a></li>
+      <li><a id="adminpanel" href="admin/list-all-products.php">F5 - Admin Panel</a></li>
     </ul>
+    <script>
+		document.onkeydown = function (e) {
+			e = e || window.event;
+
+			if (e.key=="F1") {
+				e.preventDefault()
+				document.getElementById("add").click()
+			} else if (e.key == "F2") {
+				e.preventDefault()
+				document.getElementById("remove").click()
+			} else if (e.key == "F3") {
+				e.preventDefault()
+				document.getElementById("search").click()
+			} else if (e.key == "F4") {
+				e.preventDefault()
+				document.getElementById("inventory").click()
+			} else if (e.key == "F5") {
+				e.preventDefault()
+				document.getElementById("adminpanel").click()
+			}
+		};
+    </script>
