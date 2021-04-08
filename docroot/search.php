@@ -3,20 +3,22 @@
   include 'header.php';
   include 'menu.php';
 ?>
-    <form action="search-by-barcode.php" method="post">
       <table>
-        <tbody>
-          <tr>
-            <th>Barcode</th>
-            <td><input type="text" name="barcode" id="barcode" /></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><input type="submit" name="Search inventory" /></td>
-          </tr>
-        </tbody>
-      </table>
+        <tr>
+    <form action="search-by-barcode.php" method="post">
+          <th>Barcode</th>
+          <td><input type="text" name="barcode" id="barcode" /></td>
+          <td><input type="submit" value="Search inventory" /></td>
     </form>
+        </tr>
+        <tr>
+    <form action="search-by-name.php" method="post">
+          <th>Product Name</th>
+          <td><input type="text" name="name" id="name" /></td>
+          <td><input type="submit" value="Search inventory" /></td>
+    </form>
+        </tr>
+      </table>
     <script>
 window.onload = function () {
   var input = document.getElementById('barcode');

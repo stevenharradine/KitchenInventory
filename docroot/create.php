@@ -1,4 +1,5 @@
 <?php
+if (isset($_GET[barcode])) {
         // create curl resource
         $ch = curl_init();
 
@@ -28,6 +29,12 @@
         // close curl resource to free up system resources
         curl_close($ch);
 
+        $api_buffer = "API look ups left: $ratelimit_remaining";
+  }
+  if (isset($_GET[name])) {
+    $name = $_GET[name];
+  }
+
 function get_headers_from_curl_response($response)
 {
     $headers = array();
@@ -52,7 +59,7 @@ function get_headers_from_curl_response($response)
   $title = 'Create new product';
   include 'header.php';
   include 'menu.php';
-  echo "API look ups left: $ratelimit_remaining";
+  echo "$api_buffer";
 ?>
     <form action="create-product.php" method="post">
       <table>
