@@ -49,6 +49,7 @@ function get_headers_from_curl_response($response)
 ?>
 
 <?php
+  $title = 'Create new product';
   include 'header.php';
   include 'menu.php';
   echo "API look ups left: $ratelimit_remaining";
