@@ -11,6 +11,8 @@
   $sql = "SELECT * from `products` where barcode=$_POST[barcode]";
   $result = $dbConnection->query($sql);
 
+  Database::close($dbConnection);
+
   if ($result->num_rows > 0) {
 ?>
     <table>
@@ -43,7 +45,6 @@
     echo 'Error product not found you should <a href="create.php?barcode='.$_POST['barcode'].'">create it</a><script>window.location.href="create.php?barcode='.$_POST['barcode'].'"</script>';
   }
 
-  Database::close($dbConnection);
 ?>
 
     <h1>Search more</h1>
