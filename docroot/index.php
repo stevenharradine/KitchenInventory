@@ -1,7 +1,5 @@
 <?php
   $title = 'Home';
-  include 'header.php';
-  include 'menu.php';
+  include 'views/header.php';
+  include 'views/footer.php';
 ?>
-  </body>
-</html>

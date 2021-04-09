@@ -44,7 +44,7 @@
       <li><a id="remove" href="remove.php">F2 - Remove</a></li>
       <li><a id="search" href="search.php">F3 - Search</a></li>
       <li><a id="inventory" href="inventory.php">F4 - Inventory</a></li>
-      <li><a id="adminpanel" href="admin/list-all-products.php">F5 - Admin Panel</a></li>
+      <li><a id="adminpanel" href="list-all-products.php">F5 - Admin Panel</a></li>
     </ul>
     <script>
 		document.onkeydown = function (e) {

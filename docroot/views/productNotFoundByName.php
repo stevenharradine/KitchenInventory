@@ -1,0 +1,1 @@
+Error product not found you should <a href="create.php?name='<?php echo $_POST[name]; ?>'">create it</a>
