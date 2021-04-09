@@ -26,7 +26,13 @@
       <tbody>
 <?php
     while($row = $result->fetch_assoc()) {
-      echo "<tr><td>$row[barcode]</td><td>$row[name]</td><td>$row[size]</td><td>$row[unit]</td><td>$row[qty]</td></tr>";
+      echo "<tr>";
+      echo "<td><svg class='barcode' jsbarcode-value='$row[barcode]' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></td>";
+      echo "<td>$row[name]</td>";
+      echo "<td>$row[size]</td>";
+      echo "<td>$row[unit]</td>";
+      echo "<td>$row[qty]</td>";
+      echo "</tr>";
     }
 
 ?>
@@ -56,6 +62,7 @@
       </table>
     </form>
     <script>
+      JsBarcode(".barcode").init();
 window.onload = function () {
   var input = document.getElementById('barcode');
   input.focus();
