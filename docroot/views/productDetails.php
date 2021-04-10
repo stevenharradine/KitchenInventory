@@ -2,16 +2,33 @@
 	h2 {
 		display: inline-block;
 	}
+  .left {
+    float: left;
+    text-align: center;
+    width: 300px;
+  }
+  .left img.product {
+    display: block;
+    max-height: 500px;
+    max-width: 300px;
+  }
+  .right div {
+    margin-bottom: 15px;
+  }
 </style>
 <?php
     while($row = $result->fetch_assoc()) {
-      echo "<div><h2>$row[name]</h2><input onclick='editName()' type='button' value='Edit' /></div>";
-      echo "<svg class='barcode' jsbarcode-value='$row[barcode]' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg>";
-      echo "<br />";
-      echo "Size: $row[size] $row[unit]";
-      echo "<br />";
-      echo "<br />";
-      echo "Qty: $row[qty] <a href='?barcode=$row[barcode]&amp;action=add' class='button add'>Add</a> <a href='?barcode=$row[barcode]&amp;action=remove' class='button remove'>Remove</a>";
+?>
+      <div><h2><?php echo $row[name]; ?></h2><input onclick='editName()' type='button' value='Edit' /></div>
+      <div class="left">
+        <img class='product' src='images/products/<?php echo $row[barcode]; ?>.jpg' />
+        <svg class='barcode' jsbarcode-value='<?php echo $row[barcode]; ?>' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg>
+      </div>
+      <div class="right">
+        <div>Size: <?php echo "$row[size] $row[unit]"; ?></div>
+        <div>Qty: <?php echo $row[qty]; ?> <a href='?barcode=<?php echo $row[barcode]; ?>&amp;action=add' class='button add'>Add</a> <a href='?barcode=<?php echo $row[barcode]; ?>&amp;action=remove' class='button remove'>Remove</a></div>
+    </div>
+<?php
     }
 
 ?>
