@@ -12,7 +12,9 @@
 <?php
     while($row = $result->fetch_assoc()) {
       $format_fragment = "";
-      if (strlen ($row[barcode]) == 13) {
+
+      // TODO: wrap in if to make it a configurable option
+/*      if (strlen ($row[barcode]) == 13) {
         $format_fragment = 'jsbarcode-format="EAN13"';
       } else if (strlen ($row[barcode]) == 12) {
         $format_fragment = 'jsbarcode-format="UPC"';
@@ -22,7 +24,8 @@
         $format_fragment = 'jsbarcode-format="EAN5"';
       } else if (strlen ($row[barcode]) == 2) {
         $format_fragment = 'jsbarcode-format="EAN2"';
-      }
+      }*/
+
       echo "<tr>";
       echo "<td><center><svg class='barcode' $format_fragment jsbarcode-value='$row[barcode]' jsbarcode-height='40' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></center></td>";
       echo "<td><a href='viewProduct.php?barcode=$row[barcode]'>$row[name]</a></td>";
