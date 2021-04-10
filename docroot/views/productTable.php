@@ -24,7 +24,7 @@
         $format_fragment = 'jsbarcode-format="EAN2"';
       }
       echo "<tr>";
-      echo "<td><svg class='barcode' $format_fragment jsbarcode-value='$row[barcode]' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></td>";
+      echo "<td><center><svg class='barcode' $format_fragment jsbarcode-value='$row[barcode]' jsbarcode-height='40' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></center></td>";
       echo "<td><a href='viewProduct.php?barcode=$row[barcode]'>$row[name]</a></td>";
       echo "<td>$row[size]</td>";
       echo "<td>$row[unit]</td>";
