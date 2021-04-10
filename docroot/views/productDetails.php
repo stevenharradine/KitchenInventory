@@ -2,19 +2,6 @@
 	h2 {
 		display: inline-block;
 	}
-	.button {
-		border-radius: 5px;
-		padding: 3px 7px;
-		text-decoration: none;
-	}
-	.add {
-		background-color: green;
-		color: white;
-	}
-	.remove {
-		background-color: red;
-		color: white;
-	}
 </style>
 <?php
     while($row = $result->fetch_assoc()) {
