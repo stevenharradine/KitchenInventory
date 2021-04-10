@@ -13,7 +13,7 @@
     while($row = $result->fetch_assoc()) {
       echo "<tr>";
       echo "<td><svg class='barcode' jsbarcode-value='$row[barcode]' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></td>";
-      echo "<td>$row[name]</td>";
+      echo "<td><a href='viewProduct.php?barcode=$row[barcode]'>$row[name]</a></td>";
       echo "<td>$row[size]</td>";
       echo "<td>$row[unit]</td>";
       echo "<td>$row[qty]</td>";
