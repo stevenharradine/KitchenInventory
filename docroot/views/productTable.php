@@ -36,11 +36,11 @@
 
       echo "<tr>";
       if (isset($row[PRODUCT_ID])) echo "<td>$row[PRODUCT_ID]</td>";
-      if (isset($row[barcode])) echo "<td><center><svg class='barcode' $format_fragment jsbarcode-value='$row[barcode]' jsbarcode-height='40' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></center></td>";
-      if (isset($row[name]))echo "<td><a href='viewProduct.php?barcode=$row[barcode]'>$row[name]</a></td>";
-      if (isset($row[size]))echo "<td>$row[size]</td>";
-      if (isset($row[unit]))echo "<td>$row[unit]</td>";
-      if (isset($row[qty]))echo "<td>$row[qty]</td>";
+      if (isset($row[barcode]))    echo "<td><center><svg class='barcode' $format_fragment jsbarcode-value='$row[barcode]' jsbarcode-height='40' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></center></td>";
+      if (isset($row[name]))       echo "<td><a href='viewProduct.php?barcode=$row[barcode]'>$row[name]</a></td>";
+      if (isset($row[size]))       echo "<td>$row[size]</td>";
+      if (isset($row[unit]))       echo "<td>$row[unit]</td>";
+      if (isset($row[qty]))        echo "<td>$row[qty]</td>";
       echo "</tr>";
     }
 
