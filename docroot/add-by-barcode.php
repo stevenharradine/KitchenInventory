@@ -1,16 +1,13 @@
 <?php
   $title = 'Add';
   include 'views/header.php';
-  include 'database.php';
+  include 'models/products.php';
 
   $dbConnection = Database::connect();
 
-  $sql = "UPDATE products SET qty = qty + 1 where barcode=$_POST[barcode]";
-  $resultInc = $dbConnection->query($sql);
-
-  $sql = "SELECT * from `products` where barcode=$_POST[barcode]";
-  $result = $dbConnection->query($sql);
-
+  incQty ($dbConnection, $_POST[barcode]);
+  $result = search_products_by_barcode ($dbConnection, $_POST[barcode]);
+  
   Database::close($dbConnection);
 
   if ($result->num_rows > 0) {
