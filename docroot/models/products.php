@@ -4,7 +4,12 @@
 	class Products {
 		function incQty ($dbConnection, $barcode) {
 			$sql = "UPDATE products SET qty = qty + 1 where barcode=$barcode";
-			$resultInc = $dbConnection->query($sql);
+			$result = $dbConnection->query($sql);
+		}
+
+		function decQty ($dbConnection, $barcode) {
+			$sql = "UPDATE products SET qty = qty - 1 where barcode=$_POST[barcode]";
+			$result = $dbConnection->query($sql);
 		}
 
 		function search_products_by_barcode ($dbConnection, $barcode) {

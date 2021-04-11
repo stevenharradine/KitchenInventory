@@ -1,15 +1,13 @@
 <?php
   $title = 'Remove';
   include 'views/header.php';
-  include 'database.php';
+  include 'models/products.php';
 
+  $productModel = new Products();
   $dbConnection = Database::connect();
 
-  $sql = "UPDATE products SET qty = qty - 1 where barcode=$_POST[barcode]";
-  $dbConnection->query($sql);
-  
-  $sql = "SELECT * from `products` where barcode=$_POST[barcode]";
-  $result = $dbConnection->query($sql);
+  $productModel->decQty ($dbConnection, $_POST[barcode]);
+  $result = $productModel->search_products_by_barcode ($dbConnection, $_POST[barcode]);
 
   Database::close($dbConnection);
 
