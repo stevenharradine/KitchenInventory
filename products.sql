@@ -26,8 +26,8 @@ CREATE TABLE `products` (
   `PRODUCT_ID` int(11) NOT NULL AUTO_INCREMENT,
   `barcode` bigint(20) unsigned NOT NULL,
   `name` text NOT NULL,
-  `size` decimal(12,2) DEFAULT NULL,
-  `unit` text DEFAULT NULL,
+  `size` decimal(12,2) DEFAULT 0.00,
+  `unit` text DEFAULT '',
   `qty` int(10) unsigned DEFAULT 0,
   PRIMARY KEY (`PRODUCT_ID`),
   UNIQUE KEY `barcode` (`barcode`)
