@@ -29,3 +29,7 @@
 	border: 1px solid darkred;
 	background-color: darkred;
 }
+label {
+	font-weight: bold;
+	margin-right: 10px;
+}

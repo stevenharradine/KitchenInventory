@@ -1,16 +1,5 @@
     <form action="add-by-barcode.php" method="post">
-      <table>
-        <tbody>
-          <tr>
-            <th>Barcode</th>
-            <td><input type="text" name="barcode" id="barcode" /></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><input type="submit" name="Add to inventory" /></td>
-          </tr>
-        </tbody>
-      </table>
+      <label>Barcode</label><input type="text" name="barcode" id="barcode" /><input class="button" type="submit" value="Add to inventory" />
     </form>
     <script>
 window.onload = function () {
