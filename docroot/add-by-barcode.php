@@ -3,10 +3,11 @@
   include 'views/header.php';
   include 'models/products.php';
 
+  $productModel = new Products();
   $dbConnection = Database::connect();
 
-  incQty ($dbConnection, $_POST[barcode]);
-  $result = search_products_by_barcode ($dbConnection, $_POST[barcode]);
+  $productModel->incQty ($dbConnection, $_POST[barcode]);
+  $result = $productModel->search_products_by_barcode ($dbConnection, $_POST[barcode]);
   
   Database::close($dbConnection);
 
