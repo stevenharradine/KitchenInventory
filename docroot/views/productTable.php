@@ -1,24 +1,18 @@
     <table>
 <?php
-    $isHeaderWritten = false;
+    echo "      <thead>";
+    echo "        <tr>";
+    if (in_array("PRODUCT_ID", $productTableDisplayColumns) || !isset($productTableDisplayColumns)) echo "          <th>Product ID</th>";
+    if (in_array("barcode", $productTableDisplayColumns) || !isset($productTableDisplayColumns))    echo "          <th>Barcode</th>";
+    if (in_array("name", $productTableDisplayColumns) || !isset($productTableDisplayColumns))       echo "          <th>Product</th>";
+    if (in_array("size", $productTableDisplayColumns) || !isset($productTableDisplayColumns))       echo "          <th>size</th>";
+    if (in_array("units", $productTableDisplayColumns) || !isset($productTableDisplayColumns))      echo "          <th>units</th>";
+    if (in_array("qty", $productTableDisplayColumns) || !isset($productTableDisplayColumns))        echo "          <th>qty</th>";
+    echo "        </tr>";
+    echo "      </thead>";
+    echo "      <tbody>";
 
     while($row = $result->fetch_assoc()) {
-      if (!$isHeaderWritten) {
-        echo "      <thead>";
-        echo "        <tr>";
-        if (isset($row[PRODUCT_ID])) echo "          <th>Product ID</th>";
-        if (isset($row[barcode]))    echo "          <th>Barcode</th>";
-        if (isset($row[name]))       echo "          <th>Product</th>";
-        if (isset($row[size]))       echo "          <th>size</th>";
-        if (isset($row[units]))      echo "          <th>units</th>";
-        if (isset($row[qty]))        echo "          <th>qty</th>";
-        echo "        </tr>";
-        echo "      </thead>";
-        echo "      <tbody>";
-
-        $isHeaderWritten = true;
-      }
-
       $format_fragment = "";
 
       // TODO: wrap in if to make it a configurable option
@@ -35,12 +29,12 @@
       }*/
 
       echo "<tr>";
-      if (isset($row[PRODUCT_ID])) echo "<td>$row[PRODUCT_ID]</td>";
-      if (isset($row[barcode]))    echo "<td><center><svg class='barcode' $format_fragment jsbarcode-value='$row[barcode]' jsbarcode-height='40' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></center></td>";
-      if (isset($row[name]))       echo "<td><a href='viewProduct.php?barcode=$row[barcode]'>$row[name]</a></td>";
-      if (isset($row[size]))       echo "<td>$row[size]</td>";
-      if (isset($row[unit]))       echo "<td>$row[unit]</td>";
-      if (isset($row[qty]))        echo "<td>$row[qty]</td>";
+      if (in_array("PRODUCT_ID", $productTableDisplayColumns) || !isset($productTableDisplayColumns)) echo "<td>$row[PRODUCT_ID]</td>";
+      if (in_array("barcode", $productTableDisplayColumns) || !isset($productTableDisplayColumns))    echo "<td><center><svg class='barcode' $format_fragment jsbarcode-value='$row[barcode]' jsbarcode-height='40' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></center></td>";
+      if (in_array("name", $productTableDisplayColumns) || !isset($productTableDisplayColumns))       echo "<td><a href='viewProduct.php?barcode=$row[barcode]'>$row[name]</a></td>";
+      if (in_array("size", $productTableDisplayColumns) || !isset($productTableDisplayColumns))       echo "<td>$row[size]</td>";
+      if (in_array("units", $productTableDisplayColumns) || !isset($productTableDisplayColumns))      echo "<td>$row[unit]</td>";
+      if (in_array("qty", $productTableDisplayColumns) || !isset($productTableDisplayColumns))        echo "<td>$row[qty]</td>";
       echo "</tr>";
     }
 
