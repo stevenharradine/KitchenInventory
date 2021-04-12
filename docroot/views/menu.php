@@ -13,7 +13,7 @@
       <li><a id="remove" class="button remove" href="remove.php">F2 - Remove</a></li>
       <li><a id="search" class="button" href="search.php">F3 - Search</a></li>
       <li><a id="inventory" class="button" href="inventory.php">F4 - Inventory</a></li>
-      <li><a id="adminpanel" class="button" href="list-all-products.php">F5 - Admin Panel</a></li>
+      <li><a id="settings" class="button" href="settings.php">F5 - Settings</a></li>
     </ul>
     <script>
 		document.onkeydown = function (e) {
@@ -33,7 +33,7 @@
 				document.getElementById("inventory").click()
 			} else if (e.key == "F5") {
 				e.preventDefault()
-				document.getElementById("adminpanel").click()
+				document.getElementById("settings").click()
 			}
 		};
     </script>
