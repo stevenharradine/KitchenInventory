@@ -1,7 +1,14 @@
 <?php
 
 class productTable_View {
-  function print ($result, $productTableDisplayColumns=null) {
+  const defaultDisplayColumns = array (
+    "name",
+    "size",
+    "units",
+    "qty"
+  );
+
+  function print ($result, $productTableDisplayColumns=self::defaultDisplayColumns) {
     echo "      <table>";
     echo "      <thead>";
     echo "        <tr>";
