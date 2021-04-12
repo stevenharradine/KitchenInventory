@@ -1,5 +1,8 @@
-    <table>
 <?php
+
+class productTable_View {
+  function print ($result, $productTableDisplayColumns=null) {
+    echo "      <table>";
     echo "      <thead>";
     echo "        <tr>";
     if (in_array("PRODUCT_ID", $productTableDisplayColumns) || !isset($productTableDisplayColumns)) echo "          <th>Product ID</th>";
@@ -38,9 +41,10 @@
       echo "</tr>";
     }
 
-?>
-      </tbody>
-    </table>
-    <script>
-      JsBarcode(".barcode").init();
-    </script>
+            echo "</tbody>";
+          echo "</table>";
+          echo "<script>";
+          echo "  JsBarcode('.barcode').init();";
+          echo "</script>";
+    }
+}

@@ -12,6 +12,8 @@
 
   if ($result->num_rows > 0) {
     include 'views/productTable.php';
+    $productTableView = new productTable_View ();
+    $productTableView->print($result);
   } else {
     include 'views/productNotFoundByName.php';
   }
