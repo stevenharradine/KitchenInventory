@@ -3,17 +3,19 @@
 class productTable_View {
   const defaultDisplayColumns = array (
     "name",
+    "image",
     "size",
     "units",
     "qty"
   );
 
   function print ($result, $productTableDisplayColumns=self::defaultDisplayColumns) {
-    echo "      <table>";
+    echo "      <table class='productTable'>";
     echo "      <thead>";
     echo "        <tr>";
     if (in_array("PRODUCT_ID", $productTableDisplayColumns) || !isset($productTableDisplayColumns)) echo "          <th>Product ID</th>";
     if (in_array("barcode", $productTableDisplayColumns) || !isset($productTableDisplayColumns))    echo "          <th>Barcode</th>";
+    if (in_array("image", $productTableDisplayColumns) || !isset($productTableDisplayColumns))      echo "          <th>Image</th>";
     if (in_array("name", $productTableDisplayColumns) || !isset($productTableDisplayColumns))       echo "          <th>Product</th>";
     if (in_array("size", $productTableDisplayColumns) || !isset($productTableDisplayColumns))       echo "          <th>size</th>";
     if (in_array("units", $productTableDisplayColumns) || !isset($productTableDisplayColumns))      echo "          <th>units</th>";
@@ -41,6 +43,7 @@ class productTable_View {
       echo "<tr>";
       if (in_array("PRODUCT_ID", $productTableDisplayColumns) || !isset($productTableDisplayColumns)) echo "<td>$row[PRODUCT_ID]</td>";
       if (in_array("barcode", $productTableDisplayColumns) || !isset($productTableDisplayColumns))    echo "<td><center><svg class='barcode' $format_fragment jsbarcode-value='$row[barcode]' jsbarcode-height='40' jsbarcode-textmargin='0' jsbarcode-fontoptions='bold'></svg></center></td>";
+      if (in_array("image", $productTableDisplayColumns) || !isset($productTableDisplayColumns))       echo "<td><img src='images/products/$row[barcode].jpg' /></td>";
       if (in_array("name", $productTableDisplayColumns) || !isset($productTableDisplayColumns))       echo "<td><a href='viewProduct.php?barcode=$row[barcode]'>$row[name]</a></td>";
       if (in_array("size", $productTableDisplayColumns) || !isset($productTableDisplayColumns))       echo "<td>$row[size]</td>";
       if (in_array("units", $productTableDisplayColumns) || !isset($productTableDisplayColumns))      echo "<td>$row[unit]</td>";
