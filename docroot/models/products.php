@@ -3,14 +3,16 @@
 
 	class Products {
 		function incQty ($dbConnection, $barcode) {
-			$stmt = $dbConnection->prepare("UPDATE products SET qty = qty + 1 where barcode=?");
+			$sql = "UPDATE products SET qty = qty + 1 where barcode=?";
+			$stmt = $dbConnection->prepare($sql);
 			$stmt->bind_param("i", $barcode);
 			$stmt->execute();
 			$stmt->close();
 		}
 
 		function decQty ($dbConnection, $barcode) {
-			$stmt = $dbConnection->prepare("UPDATE products SET qty = qty - 1 where barcode=?");
+			$sql = "UPDATE products SET qty = qty - 1 where barcode=?";
+			$stmt = $dbConnection->prepare($sql);
 			$stmt->bind_param("i", $barcode);
 			$stmt->execute();
 			$stmt->close();
